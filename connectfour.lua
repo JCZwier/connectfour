@@ -531,24 +531,40 @@ function intelligence ()
 				if horizontalturn + index [r + 1] == 20 then
 					if index [r - 1] ~= 1 and index [r - 1] ~= 10 and index [r - 1] ~= nil then
 						if (index [r - 8] == 1 or index [r - 8] == 10 or index [r - 8] == nil) and priority [r - 1] <= 4 then
-							priority [r - 1] = 4
+							if index [r - 2] == 10 then
+								priority [r - 1] = 6
+							else
+								priority [r - 1] = 4
+							end
 						end
 					end
 					if index [r + 2] ~= 1 and index [r + 2] ~= 10 then
 						if (index [r - 5] == 1 or index [r - 5] == 10 or index [r - 5] == nil) and priority [r + 2] <= 4 then
-							priority [r + 2] = 4
+							if index [r + 3] == 10 then
+								priority [r + 2] = 6
+							else
+								priority [r + 2] = 4
+							end
 						end
 					end
 				end
 				if horizontalturn + index [r + 1] == 2 then
 					if index [r - 1] ~= 1 and index [r - 1] ~= 10 and index [r - 1] ~= nil then
 						if (index [r - 8] == 1 or index [r - 8] == 10 or index [r - 8] == nil) and priority [r - 1] <= 3 then
-							priority [r - 1] = 3
+							if index [r - 2] == 10 then
+								priority [r - 1] = 5
+							else
+								priority [r - 1] = 3
+							end
 						end
 					end
 					if index [r + 2] ~= 1 and index [r + 2] ~= 10 then
 						if (index [r - 5] == 1 or index [r - 5] == 10 or index [r - 5] == nil) and priority [r + 2] <= 3 then
-							priority [r + 2] = 3
+							if index [r + 3] == 10 then
+								priority [r + 2] = 5
+							else
+								priority [r + 2] = 3
+							end
 						end
 					end
 				end
@@ -557,24 +573,40 @@ function intelligence ()
 				if horizontalturn == 10 then
 					if index [r - 1] ~= 1 and index [r - 1] ~= 10 and index [r - 1] ~= nil then
 						if (index [r - 8] == 1 or index [r - 8] == 10 or index [r - 8] == nil) and priority [r - 1] <= 2 then
-							priority [r - 1] = 2
+							if index [r - 2] == 10 then
+								priority [r - 1] = 4
+							else
+								priority [r - 1] = 2
+							end
 						end
 					end
 					if index [r + 1] ~= 1 and index [r + 1] ~= 10 then
 						if (index [r - 6] == 1 or index [r - 6] == 10 or index [r - 6] == nil) and priority [r + 1] <= 2 then
-							priority [r + 1] = 2
+							if index [r + 2] == 10 then
+								priority [r + 1] = 4
+							else
+								priority [r + 1] = 2
+							end
 						end
 					end
 				end
 				if horizontalturn == 1 then
 					if index [r - 1] ~= 1 and index [r - 1] ~= 10 and index [r - 1] ~= nil then
 						if (index [r - 8] == 1 or index [r - 8] == 10 or index [r - 8] == nil) and priority [r - 1] <= 1 then
-							priority [r - 1] = 1
+							if index [r - 2] == 10 then
+								priority [r - 1] = 3
+							else
+								priority [r - 1] = 1
+							end
 						end
 					end
 					if index [r + 1] ~= 1 and index [r + 1] ~= 10 then
 						if (index [r - 6] == 1 or index [r - 6] == 10 or index [r - 6] == nil) and priority [r + 1] <= 1 then
-							priority [r + 1] = 1
+							if index [r + 2] == 10 then
+								priority [r + 1] = 3
+							else
+								priority [r + 1] = 1
+							end
 						end
 					end
 				end
@@ -661,24 +693,40 @@ function intelligence ()
 				if diagonalforwardturn + index [r + 8] == 20 then
 					if index [r - 8] ~= 1 and index [r - 8] ~= 10 and index [r - 8] ~= nil then
 						if (index [r - 15] == 1 or index [r - 15] == 10 or index [r - 15] == nil) and priority [r - 8] <= 4 then
-							priority [r - 8] = 4
+							if index [r - 16] == 10 then
+								priority [r - 8] = 6
+							else
+								priority [r - 8] = 4
+							end
 						end
 					end
 					if index [r + 16] ~= 1 and index [r + 16] ~= 10 then
 						if (index [r + 9] == 1 or index [r + 9] == 10) and priority [r + 16] <= 4 then
-							priority [r + 16] = 4
+							if index [r + 24] == 10 then
+								priority [r + 16] = 6
+							else
+								priority [r + 16] = 4
+							end
 						end
 					end
 				end
 				if diagonalforwardturn + index [r + 8] == 2 then
 					if index [r - 8] ~= 1 and index [r - 8] ~= 10 and index [r - 8] ~= nil then
 						if (index [r - 15] == 1 or index [r - 15] == 10 or index [r - 15] == nil) and priority [r - 8] <= 3 then
-							priority [r - 8] = 3
+							if index [r - 16] == 10 then
+								priority [r - 8] = 5
+							else
+								priority [r - 8] = 3
+							end
 						end
 					end
 					if index [r + 16] ~= 1 and index [r + 16] ~= 10 then
 						if (index [r + 9] == 1 or index [r + 9] == 10) and priority [r + 16] <= 3 then
-							priority [r + 16] = 3
+							if index [r + 24] == 10 then
+								priority [r + 16] = 5
+							else
+								priority [r + 16] = 3
+							end
 						end
 					end
 				end
@@ -687,24 +735,40 @@ function intelligence ()
 				if diagonalforwardturn == 10 then
 					if index [r - 8] ~= 1 and index [r - 8] ~= 10 and index [r - 8] ~= nil then
 						if (index [r - 15] == 1 or index [r - 15] == 10 or index [r - 15] == nil) and priority [r - 8] <= 2 then
-							priority [r - 8] = 2
+							if index [r - 16] == 10 then
+								priority [r - 8] = 4
+							else
+								priority [r - 8] = 2
+							end
 						end
 					end
 					if index [r + 8] ~= 1 and index [r + 8] ~= 10 then
 						if (index [r + 1] == 1 or index [r + 1] == 10) and priority [r + 8] <= 2 then
-							priority [r + 8] = 2
+							if index [r + 16] == 10 then
+								priority [r + 8] = 4
+							else
+								priority [r + 8] = 2
+							end
 						end
 					end
 				end
 				if diagonalforwardturn == 1 then
 					if index [r - 8] ~= 1 and index [r - 8] ~= 10 and index [r - 8] ~= nil then
 						if (index [r - 15] == 1 or index [r - 15] == 10 or index [r - 15] == nil) and priority [r - 8] <= 1 then
-							priority [r - 8] = 1
+							if index [r - 16] == 10 then
+								priority [r - 8] = 3
+							else
+								priority [r - 8] = 1
+							end
 						end
 					end
 					if index [r + 8] ~= 1 and index [r + 8] ~= 10 then
 						if (index [r + 1] == 1 or index [r + 1] == 10) and priority [r + 8] <= 1 then
-							priority [r + 8] = 1
+							if index [r + 16] == 10 then
+								priority [r + 8] = 3
+							else
+								priority [r + 8] = 1
+							end
 						end
 					end
 				end
@@ -742,24 +806,40 @@ function intelligence ()
 				if diagonalbackwardturn + index [r + 6] == 20 then
 					if index [r - 6] ~= 1 and index [r - 6] ~= 10 and index [r - 6] ~= nil then
 						if (index [r - 13] == 1 or index [r - 13] == 10 or index [r - 13] == nil) and priority [r - 6] <= 4 then
-							priority [r - 6] = 4
+							if index [r - 12] == 10 then
+								priority [r - 6] = 6
+							else
+								priority [r - 6] = 4
+							end
 						end
 					end
 					if index [r + 12] ~= 1 and index [r + 12] ~= 10 then
 						if (index [r + 5] == 1 or index [r + 5] == 10) and priority [r + 12] <= 4 then
-							priority [r + 12] = 4
+							if index [r + 18] == 10 then
+								priority [r + 12] = 6
+							else
+								priority [r + 12] = 4
+							end
 						end
 					end
 				end
 				if diagonalbackwardturn + index [r + 6] == 2 then
 					if index [r - 6] ~= 1 and index [r - 6] ~= 10 and index [r - 6] ~= nil then
 						if (index [r - 13] == 1 or index [r - 13] == 10 or index [r - 13] == nil) and priority [r - 6] <= 3 then
-							priority [r - 6] = 3
+							if index [r - 12] == 10 then
+								priority [r - 6] = 5
+							else
+								priority [r - 6] = 3
+							end
 						end
 					end
 					if index [r + 12] ~= 1 and index [r + 12] ~= 10 then
 						if (index [r + 5] == 1 or index [r + 5] == 10) and priority [r + 12] <= 3 then
-							priority [r + 12] = 3
+							if index [r + 18] == 10 then
+								priority [r + 12] = 5
+							else
+								priority [r + 12] = 3
+							end
 						end
 					end
 				end
@@ -768,24 +848,40 @@ function intelligence ()
 				if diagonalbackwardturn == 10 then
 					if index [r - 6] ~= 1 and index [r - 6] ~= 10 and index [r - 6] ~= nil then
 						if (index [r - 13] == 1 or index [r - 13] == 10 or index [r - 13] == nil) and priority [r - 6] <= 2 then
-							priority [r - 6] = 2
+							if index [r - 12] == 10 then
+								priority [r - 6] = 4
+							else
+								priority [r - 6] = 2
+							end
 						end
 					end
 					if index [r + 12] ~= 1 and index [r + 12] ~= 10 then
 						if (index [r - 1] == 1 or index [r - 1] == 10 or index [r - 1] == nil) and priority [r + 6] <= 2 then
-							priority [r + 6] = 2
+							if index [r + 12] == 10 then
+								priority [r + 6] = 4
+							else
+								priority [r + 6] = 2
+							end
 						end
 					end
 				end
 				if diagonalbackwardturn == 1 then
 					if index [r - 6] ~= 1 and index [r - 6] ~= 10 and index [r - 6] ~= nil then
 						if (index [r - 13] == 1 or index [r - 13] == 10 or index [r - 13] == nil) and priority [r - 6] <= 1 then
-							priority [r - 6] = 1
+							if index [r - 12] == 10 then
+								priority [r - 6] = 3
+							else
+								priority [r - 6] = 1
+							end
 						end
 					end
 					if index [r + 6] ~= 1 and index [r + 6] ~= 10 then
 						if (index [r - 1] == 1 or index [r - 1] == 10 or index [r - 1] == nil) and priority [r + 6] <= 1 then
-							priority [r + 6] = 1
+							if index [r + 12] == 10 then
+								priority [r + 6] = 3
+							else
+								priority [r + 6] = 1
+							end
 						end
 					end
 				end
